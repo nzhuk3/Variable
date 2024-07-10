@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+    <link rel="stylesheet" href="login.css">
+    <style>
+        :root {
+    --base: calc(1vw + 1vh);
+    --br-big: 20px;
+    --br-small: 10px;
+    --padding: 10px;
+    --button-padding: 12px 20px;
+    --bg: #FFF2F1;
+    --accent: #EBFADB;
+    --accent-text: #222F27;
+    --primary: #2D3D33;
+    --primary-text: #FFF2F1;
+    --text: #2B2626;
+    --landing-bg: #E4E4E4;
+    --border: 1px solid var(--stroke);
+    --stroke: #E9E9E9;
+    --placeholder: #828282;
+    --divider: #E6E6E6;
+    --shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('font/Inter-VariableFont_slnt\,wght.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter';
+    font-size: 16px;
+}
+
+html {
+    width: 100%;
+}
+
+body {
+    width: 100%;
+    background-color: var(--landing-bg);
+}
+
+button, a {
+    text-decoration: none;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    color: inherit;
+    font-family: 'Inter';
+    font-size: 16px;
+}
+
+.section-heading {
+    color: var(--text);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.subheading { 
+    color: var(--text);
+    font-size: 16px;
+}
+
+.button-main {
+    width: fit-content;
+    padding: var(--button-padding);
+    border-radius: var(--br-small);
+    background-color: var(--primary);
+    color: var(--primary-text);
+}
+
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #28282A;
+        --accent: #C6EBBE;
+        --accent-text: #1D1D1F;
+        --primary: #2D3D33;
+        --primary-text: #5DC8B4;
+        --text: #5DC8B4;
+        --landing-bg: #1E1E1F;
+        --border: 1px solid var(--stroke);
+        --stroke: #5DC8B4;
+        --placeholder: #828282;
+        --divider: #E6E6E6;
+        --shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+}
+
+    </style>
+</head>
+<body>
+    <main>
+        <section class="qr-wrap">
+            <img src="img/qr.png" alt="" class="qr-image">
+            <h1 class="section-heading">QR-code entry</h1>
+            <span class="subheading">scan this qr-code with your mobile phone to enter the system</span>
+        </section>
+        <section class="form-wrap">
+            <h1 class="section-heading">Log in using email</h1>
+            <span>Enter your credentials to continue</span>
+            <form id="login-form" action="">
+                <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email-input" class="form-input" type="email" placeholder="placeholder" name="email">
+                <label for="email" class="error-message hidden">Error</label>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input id="password-input" class="form-input" type="password" placeholder="placeholder" name="password">
+                    <a href="" class="reset-password-link">Forgot your password?</a>
+                    <label for="password" class="error-password hidden">Error</label>
+                </div>
+                <button class="button-main">Send</button>
+            </form>
+            <div class="divider">
+                <div class="line"></div>
+                <span class="placeholder-text">or continue with</span>
+            </div>
+            <div class="oauth-wrap button-main">
+                <img src="" alt="" class="oauth-icon">
+                <a href="">Google</a>
+            </div>
+            <span class="legal-text">By clicking continue, you agree to our <a class="legal-link" href="">Terms of Service</a> and <a class="legal-link" href="">Privacy Policy</a> </span>
+        </section>
+    </main>
+</body>
+</html>
