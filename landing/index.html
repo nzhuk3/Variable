@@ -4,8 +4,341 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <base href="localhost:5500/" target="_blank"> -->
-    <link rel="stylesheet" href="style.css">
     <title>Variable</title>
+    <style>
+        :root {
+    --base: calc(1vw + 1vh);
+    --br-big: 20px;
+    --br-small: 10px;
+    --padding: 10px;
+    --button-padding: 12px 20px;
+    --bg: #FFF2F1;
+    --accent: #EBFADB;
+    --accent-text: #222F27;
+    --primary: #2D3D33;
+    --primary-text: #FFF2F1;
+    --text: #2B2626;
+    --landing-bg: #E4E4E4;
+    --border: 1px solid var(--stroke);
+    --stroke: #E9E9E9;
+    --placeholder: #828282;
+    --divider: #E6E6E6;
+    --shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../font/Inter-VariableFont_slnt\,wght.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter';
+    font-size: 16px;
+}
+
+html {
+    width: 100%;
+}
+
+body {
+    width: 100%;
+    background-color: var(--landing-bg);
+    padding: 2% 5%;
+}
+
+nav, section, footer {
+    margin-bottom: 30px;
+}
+
+button, a {
+    text-decoration: none;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    color: inherit;
+    font-family: 'Inter';
+    font-size: 16px;
+}
+
+.island {
+    background-color: var(--bg);
+    color: var(--text);
+    border: var(--border);
+    border-radius: var(--br-big);
+    padding: var(--padding);
+    box-shadow: var(--shadow);
+}
+
+.headline {
+    color: var(--text);
+    font-size: 50px;
+    text-align: center;
+    font-weight: 800;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+.section-heading {
+    color: var(--text);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.subheading { 
+    color: var(--text);
+    font-size: 18px;
+}
+
+.button-main {
+    width: fit-content;
+    padding: var(--button-padding);
+    border-radius: var(--br-small);
+    background-color: var(--primary);
+    color: var(--primary-text);
+}
+
+.nav-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 500;
+}
+
+.nav-main .flex-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+}
+
+.logo-wrap {
+    padding: 0 var(--padding);
+}
+
+.links-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+}
+
+.buttons-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    border: 1px solid var(--primary);
+    border-radius: var(--br-small);
+    overflow: hidden;
+}
+
+.buttons-wrap > a {
+    padding: 12px 20px;
+}
+
+.buttons-wrap > .login-button {
+    color: var(--text);
+    background-color: var(--bg);
+}
+
+.buttons-wrap > .signup-button {
+    color: var(--primary-text);
+    background-color: var(--primary);
+    border-radius: 0;
+}
+
+section.cta-photo-section {
+    height: 80vh;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.main-cta-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100%;
+    filter: brightness(90%) blur(4px);
+    z-index: 0;
+}
+
+.cta-photo-section > *:not(.main-cta-image) {
+    z-index: 1;
+}
+
+.image-feature-section {
+    display: flex;
+    gap: 40px;
+}
+
+.image-feature-section > * {
+    width: calc(50% - 20px);
+}
+
+.image-feature-section img {
+    border-radius: var(--br-big);
+}
+
+.row-reversed {
+    flex-direction: row-reverse;
+}
+
+.feature-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.features-grid-section {
+    margin: 70px 0;
+    display: flex;
+    gap: 60px;
+    flex-direction: column;
+}
+
+.features-grid-section .section-heading {
+    text-align: center;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 400px;
+}
+
+.feature > .feature-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.feature-heading {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.feature-heading svg {
+    filter: invert(7%) sepia(3%) saturate(2509%) hue-rotate(314deg) brightness(103%) contrast(81%);
+}
+
+.feature-description {
+    text-align: center;
+    color: var(--text);
+}
+
+.cta-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0;
+    gap: 24px;
+}
+
+.socials-wrap {
+    display: flex;
+    gap: 10px;
+}
+
+.social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--br-small);
+    background-color: var(--accent);
+    color: var(--accent-text);
+    border: var(--border);
+    padding: var(--padding);
+}
+
+.footer-main {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.footer-main div:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.topics-wrap {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+    gap: 30px;
+}
+
+.topic {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.topic-heading {
+    margin-bottom: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #28282A;
+        --accent: #C6EBBE;
+        --accent-text: #1D1D1F;
+        --primary: #2D3D33;
+        --primary-text: #5DC8B4;
+        --text: #5DC8B4;
+        --landing-bg: #1E1E1F;
+        --border: 1px solid var(--stroke);
+        --stroke: #5DC8B4;
+        --placeholder: #828282;
+        --divider: #E6E6E6;
+        --shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .buttons-wrap {
+        border: 1px solid var(--text);
+
+    }
+
+    .buttons-wrap .signup-button {
+        background-color: var(--text);
+        color: var(--bg);
+    }
+
+    .feature-heading svg {
+        filter: invert(79%) sepia(52%) saturate(384%) hue-rotate(112deg) brightness(83%) contrast(89%);
+    }
+}
+
+    </style>
 </head>
 <body>
     <nav class="island nav-main">
@@ -23,13 +356,13 @@
     </nav>
     <main>
         <section class="island cta-photo-section">
-            <img class="main-cta-image" src="img/panel.jpg" alt="picture of interface">
+            <img class="main-cta-image" src="../img/panel.jpg" alt="picture of interface">
             <h1 class="headline">Explore platform full of everything</h1>
             <span class="subheading">And don't forget to bring friends too</span>
             <button class="button-main cta-button">Share</button>
         </section>
         <section class="image-feature-section">
-            <img src="img/feature1.jpg" alt="" class="image">
+            <img src="../img/feature1.jpg" alt="" class="image">
             <div class="feature-content">
                 <h1 class="section-heading">Various user interactions</h1>
                 <span class="subheading">Games, questionnaires, puzzles, we’ve got it all</span>
@@ -37,7 +370,7 @@
             </div>
         </section>
         <section class="image-feature-section row-reversed">
-            <img src="img/feature2.jpg" alt="" class="image">
+            <img src="../img/feature2.jpg" alt="" class="image">
             <div class="feature-content">
                 <h1 class="section-heading">Various user interactions</h1>
                 <span class="subheading">Games, questionnaires, puzzles, we’ve got it all</span>
