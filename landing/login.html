@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Authentication</title>
+    <script defer src="js/auth.js"></script>
     <style>
         :root {
     --base: calc(1vw + 1vh);
@@ -11,6 +12,7 @@
     --br-small: 10px;
     --padding: 10px;
     --button-padding: 12px 20px;
+    --input-padding: 10px;
     --bg: #FFF2F1;
     --accent: #EBFADB;
     --accent-text: #222F27;
@@ -127,14 +129,16 @@ input {
 }
 
 #login-form {
+    margin-top: 14px;
     width: 100%;
     display: flex;
     flex-direction: column;
+    gap: 6px;
 }
 
 .form-input {
     width: 100%;
-    padding: var(--button-padding);
+    padding: var(--input-padding);
     border-radius: var(--br-small);
     background-color: var(--bg);
     color: var(--primary-text);
@@ -145,9 +149,11 @@ input {
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 2px;
     flex-grow: 1;
 }
+
+
 
 label {
     color: var(--text);
@@ -159,7 +165,7 @@ label {
 }
 
 .hidden {
-    visibility: hidden;
+    opacity: 0;
 }
 
 form > .button-main {
@@ -228,9 +234,12 @@ form > .button-main {
 }
 
 .error-message {
+    font-style: italic;
     color: red;
-    font-size: 14px;
+    font-size: 12px;
+    transition: opacity 0.1s ease-in;
 }
+
 
 
 @media (prefers-color-scheme: dark) {
@@ -265,18 +274,17 @@ form > .button-main {
             <span>Enter your credentials to continue</span>
             <form id="login-form" action="">
                 <div class="form-group">
-                <label for="email">Email</label>
+                <label for="email">Email or username</label>
                 <input id="email-input" class="form-input" type="email" placeholder="placeholder" name="email">
-                <label for="email" class="error-message hidden">Error</label>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
                     <input id="password-input" class="form-input" type="password" placeholder="placeholder" name="password">
                     <a href="" class="reset-password-link">Forgot your password?</a>
-                    <label for="password" class="error-password hidden">Error</label>
                 </div>
-                <button class="button-main">Send</button>
+                <button class="button-main signin-button">Send</button>
             </form>
+            <span class="error-message hidden">Incorrect email or password</span>
             <div class="divider">
                 <div class="line"></div>
                 <span class="placeholder-text">or continue with</span>
