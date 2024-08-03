@@ -7,7 +7,7 @@ function initiateSignup() {
     form.onsubmit = (event) => {
         event.preventDefault();
     }
-    
+
     const usernameInput = form[0];
     const usernameErrorText = usernameInput.nextElementSibling;
     const emailInput = form[1]
@@ -42,7 +42,7 @@ function initiateSignup() {
             })
 
             console.warn(payload);
-        
+
             fetch(PATH, {
                 method: "POST",
                 body: payload,
@@ -63,7 +63,7 @@ function initiateSignup() {
         } else {
 
         }
-        
+
     })
 }
 
@@ -82,10 +82,10 @@ function initiateLogin() {
 
     sendButton.addEventListener('click', (event) => {
         const payload = JSON.stringify({
-            credential: credentialInput.value,
+            email: credentialInput.value,
             password: passwordInput.value
         })
-    
+
         fetch(PATH, {
             method: "POST",
             body: payload,
@@ -93,15 +93,17 @@ function initiateLogin() {
                 "Content-Type": "application/json",
             },
             mode: "cors"
-        }).then(async (response) => {
+        }).then((response) => {
             if (response.ok) {
-                const data = await response.json();
+
+                window.location.replace("http://localhost:8080/horay");
+
                 console.log("horay!!!");
                 errorTextElement.classList.add('hidden');
-              } else {
-                console.log("horay!!!");
+            } else {
+                //console.log("horay!!!");
                 errorTextElement.classList.remove('hidden');
-              }
+            }
         })
     })
 }
@@ -145,7 +147,7 @@ function checkUsernameInput(input, errorTextElement) {
         }
         return 0;
     } else {
-        
+
         errorTextElement.classList.add('hidden');
         return 1;
     }
