@@ -1,3 +1,5 @@
+// ВСЕМ ПРИВЕТ С ВАМИ БАААААТОНОС
+
 function initiateSignup() {
     const form = document.querySelector('#signup-form');
     const PATH = 'http://localhost:8080/auth/signup';
