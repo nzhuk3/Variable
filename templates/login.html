@@ -20,7 +20,7 @@
     --primary-text: #FFF2F1;
     --text: #2B2626;
     --landing-bg: #E4E4E4;
-    --border: 1px solid var(--stroke);
+    --border: 2px solid var(--stroke);
     --stroke: #E9E9E9;
     --placeholder: #828282;
     --divider: #E6E6E6;
@@ -65,19 +65,17 @@ body {
 }
 
 .bg-drift {
-    filter: blur(12px);
     z-index: -1;
     position: absolute;
-    width: 200vw;
-    height: 300vh;
-    background: linear-gradient(70deg, var(--primary), var(--bg));
+    width: 120vw;
+    height: 120vw;
+    background: linear-gradient(70deg, var(--primary), var(--accent));
     animation: 15s linear alternate infinite bg-wave;
 }
 
 @keyframes bg-wave {
     0% {
         rotate: 120deg;
-        transform: translate(-25%, 0);
     }
 }
 
@@ -86,7 +84,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: var(--border);
+    border: 2px solid var(--primary);
     background-color: var(--bg);
     border-radius: var(--br-big);
     padding: 20px 40px;
@@ -243,6 +241,10 @@ form > .button-main {
 
 
 @media (prefers-color-scheme: dark) {
+    main {
+        border: var(--border);
+    }
+
     :root {
         --bg: #28282A;
         --accent: #C6EBBE;
@@ -257,6 +259,7 @@ form > .button-main {
         --divider: #E6E6E6;
         --shadow: 0 0 8px rgba(0, 0, 0, 0.1);
     }
+  
 }
 
     </style>

@@ -65,19 +65,17 @@ body {
 }
 
 .bg-drift {
-    filter: blur(12px);
     z-index: -1;
     position: absolute;
-    width: 200vw;
-    height: 300vh;
-    background: linear-gradient(70deg, var(--primary), var(--bg));
+    width: 120vw;
+    height: 120vw;
+    background: linear-gradient(70deg, var(--primary), var(--accent));
     animation: 15s linear alternate infinite bg-wave;
 }
 
 @keyframes bg-wave {
     0% {
         rotate: 120deg;
-        transform: translate(-25%, 0);
     }
 }
 
@@ -234,8 +232,21 @@ form > .button-main {
     font-size: 12px;
 }
 
+.error-text {
+    color: red;
+    font-size: 12px;
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 
 @media (prefers-color-scheme: dark) {
+    main {
+        border: var(--border);
+    }
+
     :root {
         --bg: #28282A;
         --accent: #C6EBBE;
@@ -277,6 +288,7 @@ form > .button-main {
                     <label for="password" class="error-message hidden">Error</label>
                 </div>
                 <button class="button-main signup-button">Sign up</button>
+                <span class="error-text hidden">Please fill out all forms correctly</span>
             </form>
             <div class="divider">
                 <div class="line"></div>
