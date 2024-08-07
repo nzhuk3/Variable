@@ -87,7 +87,7 @@ function initiateLogin() {
 
     sendButton.addEventListener('click', (event) => {
         const payload = JSON.stringify({
-            email: credentialInput.value,
+            credential: credentialInput.value,
             password: passwordInput.value
         })
 
